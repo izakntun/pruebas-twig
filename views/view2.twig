@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exampla</title>
+</head>
+<body>
+{# Verifica si un array esta vacio o no los parentesis son opcionales el === no funciona solo funciona el ==#}
+    {% if user %}
+        <h1> Hola {{user.name|title}} </h1>
+    {% endif %}
+
+    {% if online %}
+        <h2>El sitio esta online</h2>
+    {% else %}
+        <h2>Nuestro sitio esta en mantenimiento.</h2>
+    {% endif %}
+
+    {% if user.email is defined %}
+        <p> E-mail: {{user.email}} </p>
+    {% else %}
+        <p>La variable no esta definida</p>
+    {% endif %}
+</body>
+</html>

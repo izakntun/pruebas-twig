@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ciclo For con Twig</title>
+</head>
+<body>
+    <h1>Ciclo For con Twig</h1>
+    <h2>Personas</h2>
+    <select name="" id="">
+        {% for person in people %}
+            <option value="{{ person }}">{{person}}</option>
+        {% endfor %}
+    </select>
+
+    {# operador punto punto #}
+    <h2>Secuencia de Numeros</h2>
+    <select name="" id="">
+        {% for i in 1..10 %}
+            <option value="{{ i }}">{{i}}</option>
+        {% endfor %}
+    </select>
+
+    <h2>Secuencia de letras</h2>
+    <select name="" id="">
+        {% for letters in 'a'|upper..'z'|upper %}
+                <option value="{{ letters }}">{{ letters }}</option>
+        {% endfor %}
+    </select>
+</body>
+</html>

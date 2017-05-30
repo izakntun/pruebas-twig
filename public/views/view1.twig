@@ -1,0 +1,36 @@
+{# Así se define una variable con twig 
+{% set name = "Isaac" %}#}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aprendiendo Twig</title>
+</head>
+<body>
+<h1>Datos de usuario</h1>
+    <p>
+        Nombres: {{user.name|striptags|upper}}
+    </p>
+    <p>
+        Apellidos: {{user.lastName|title}}
+    </p>
+    <p>
+        E-mail: {{user.email}}
+    </p>
+    <h2>Biografía</h2>
+
+    {% filter title %}
+    {#Tipos de filtros pueden ser, title, upper, striptags#}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Tenetur repudiandae totam quas eaque fugiat quasi, vero adipisci sed, 
+        alias atque ducimus maiores delectus quo, facilis, 
+        doloribus cumque laborum ratione harum.
+    {% endfilter %}
+    <br>
+    <code>
+        {{user|json_encode}}
+    </code>
+</body>
+</html>
